@@ -18,7 +18,7 @@ from django.urls import path, include
 from blog.views import HomeView
 
 urlpatterns = [
-    path('', Homeview.as_view(), name='home')
+    path('', HomeView.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('blog/', include('blogapp.urls')),
     path('bookmark/', include('bookmarkapp.urls')),

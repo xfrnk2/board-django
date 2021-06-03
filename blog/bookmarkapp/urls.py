@@ -3,6 +3,7 @@ from django.urls import path
 
 from bookmarkapp.views import BookmarkLV, BookmarkDV
 
+app_name = 'bookmark'
 urlpatterns = [
 #
 #     # class-based views
