@@ -8,14 +8,15 @@ class PostLV(ListView):
     model = Post
     template_name = 'blogapp/post_all.html'
     context_object_name = 'posts'
-    paginate_by = 1
+    paginate_by = 2
+    
 
 class PostDV(DetailView):
     model = Post
 
 class PostAV(ArchiveIndexView):
     model = Post
-    data_field = 'modify_dt'
+    date_field = 'modify_dt'
 
 class PostYAV(YearArchiveView):
     model = Post
