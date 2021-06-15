@@ -39,8 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blogapp.apps.BlogappConfig',
     'bookmarkapp.apps.BookmarkappConfig',
-    'blog'
+    'blog',
+    'taggit.apps.TaggitAppConfig',
+    'taggit_templatetags2',
 ]
+
+MEDIA_URL = '/media/' #추가
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #추가
+
+TAGGIT_CASE_INSENSITIVE = True #추가
+TAGGIT_LIMIT = 50 #추가
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
