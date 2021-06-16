@@ -17,4 +17,5 @@ urlpatterns = [
     path('tag/', views.TagCloudTV.as_view(), name='tag_cloud'),
     # example : /blog/tag/tagname/
     path('tag/<str:tag>/', views.TaggedObjectLV.as_view(), name='tagged_object_list'),
+    path('search/', views.SearchFormView.as_view(), name='search'),
 ]
