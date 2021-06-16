@@ -48,7 +48,7 @@ MEDIA_URL = '/media/' #추가
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #추가
 
 TAGGIT_CASE_INSENSITIVE = True #추가
-TAGGIT_LIMIT = 50 #추가
+TAGGIT_LIMIT = 50 #추가 , default=10
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -129,6 +129,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+
+#disqus
+DISQUS_SHORTNAME = 'pydjango-web-programming-lhazuybxcd'
+DISQUS_MY_DOMAIN = 'http://127.0.0.1:8000/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
