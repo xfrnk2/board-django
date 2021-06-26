@@ -17,9 +17,17 @@ from django.contrib import admin
 from django.urls import path, include
 from blog.views import HomeView
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('blog/', include('blogapp.urls')),
     path('bookmark/', include('bookmarkapp.urls')),
-]
+    path('photo/', include('photo.urls')),
+
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+# static 함수의 형식은 다음과 같습니다.
+# static(prefix(접두사), view=django.views.static.serve, **kwargs)
