@@ -20,9 +20,23 @@ from blog.views import HomeView
 from django.conf.urls.static import static
 from django.conf import settings
 
+from blog.views import UserCreateView, UserCreateDoneTV
+
 urlpatterns = [
-    path('', HomeView.as_view(), name='home'),
     path('admin/', admin.site.urls),
+
+    # 아래 인증 URL 3개 추가
+
+    # 장고 Auth앱의 URLCONF에는 /login/, /logout/처럼 저장되어 있으므로
+    # 그 앞에 URL 추가를 원한다면 아래와 같이 이를 표시해야 함. -> /accounts/login/ 등이 됨.
+    path('accounts/', include('django.contrib.auth.urls')),
+
+    path('accounts/register/', UserCreateView.as_view(), name='register'),
+    path('accounts/register/done/', UserCreateDoneTV.as_view(), name='register_done'),
+
+
+    path('', HomeView.as_view(), name='home'),
+
     path('blog/', include('blogapp.urls')),
     path('bookmark/', include('bookmarkapp.urls')),
     path('photo/', include('photo.urls')),

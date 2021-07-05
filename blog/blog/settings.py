@@ -31,22 +31,32 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    # 프로젝트
+    'blog',
+    # 장고 기본 앱
     'django.contrib.auth',
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # My App
     'blogapp.apps.BlogappConfig',
     'bookmarkapp.apps.BookmarkappConfig',
     'photo.apps.PhotoConfig',
-    'blog',
     'taggit.apps.TaggitAppConfig',
     'taggit_templatetags2',
+    'widget_tweaks',
 ]
+# AUTH_USER_MODEL = 'auth.User'
 
 MEDIA_URL = '/media/' #추가
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #추가
+
+#Login_URL = 'accounts/login'
+LOGIN_REDIRECT_URL = '/'
+
+
 
 TAGGIT_CASE_INSENSITIVE = True #추가
 TAGGIT_LIMIT = 50 #추가 , default=10
