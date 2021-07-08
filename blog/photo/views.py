@@ -35,7 +35,7 @@ class PhotoChangeLV(LoginRequiredMixin, ListView):
     template_name = 'photo/photo_change_list.html'
 
     def get_queryset(self):
-        return Album.objects.filter(owner=self.request.user)
+        return Photo.objects.filter(owner=self.request.user)
 
 class PhotoUV(OwnerOnlyMixin, UpdateView):
     model = Photo
